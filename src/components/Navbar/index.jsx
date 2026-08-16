@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaHouse, FaMugHot, FaEnvelope, FaLocationDot } from 'react-icons/fa6'
+import { FaHouse, FaMugHot, FaEnvelope} from 'react-icons/fa6'
 import './index.css'
 
 const navItems = [
@@ -52,10 +52,7 @@ const Navbar = () => {
               className="order-btn"
               onClick={() => window.open('https://maps.app.goo.gl/ML56nynavyKNGykA9', '_blank', 'noopener,noreferrer')}
             >
-              <span className="nav-icon" aria-hidden="true">
-                <FaLocationDot />
-              </span>
-              <span>Location</span>
+              <span>Location </span>
             </button>
           </li>
         </ul>
