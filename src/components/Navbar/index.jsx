@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { FaHouse, FaMugHot, FaEnvelope } from 'react-icons/fa6'
 import './index.css'
 
 const navItems = [
-  { label: 'Home', icon: '🏠', to: '/' },
-  { label: 'Menu', icon: '☕', to: '/menu' },
-  { label: 'Contact', icon: '✉️', to: '/contact' },
+  { label: 'Home', icon: FaHouse, to: '/' },
+  { label: 'Menu', icon: FaMugHot, to: '/menu' },
+  { label: 'Contact', icon: FaEnvelope, to: '/contact' },
 ]
 
 const Navbar = () => {
@@ -30,14 +31,20 @@ const Navbar = () => {
 
       <nav className={`nav-bar ${menuOpen ? 'open' : ''}`} aria-label="Main navigation">
         <ul>
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <Link to={item.to} className="nav-link" onClick={() => setMenuOpen(false)}>
-                <span className="nav-icon" aria-hidden="true">{item.icon}</span>
-                <span>{item.label}</span>
-              </Link>
-            </li>
-          ))}
+          {navItems.map((item) => {
+            const Icon = item.icon
+
+            return (
+              <li key={item.label}>
+                <Link to={item.to} className="nav-link" onClick={() => setMenuOpen(false)}>
+                  <span className="nav-icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span>{item.label}</span>
+                </Link>
+              </li>
+            )
+          })}
 
           <li className="nav-action">
             <button
