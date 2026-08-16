@@ -1,15 +1,6 @@
 import React, { useState } from "react";
+import Reveal from "../Reveal";
 import "./index.css";
-
-const menuCategories = [
-  "All",
-  "Hot Coffee",
-  "Cold Coffee",
-  "Tea",
-  "Refreshers",
-  "Desserts",
-  "Snacks",
-];
 
 const menuItems = [
   {
@@ -421,17 +412,23 @@ const menuItems = [
   },
 ];
 
-const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+const categoryOptions = [
+  "Hot Coffee",
+  "Cold Coffee",
+  "Tea",
+  "Refreshers",
+  "Desserts",
+  "Snacks",
+];
 
-  const filteredItems =
-    activeCategory === "All"
-      ? menuItems
-      : menuItems.filter((item) => item.category === activeCategory);
+const Menu = () => {
+  const [activeCategory, setActiveCategory] = useState("Hot Coffee");
+
+  const filteredItems = menuItems.filter((item) => item.category === activeCategory);
 
   return (
     <main className="menu-page">
-      <section className="menu-hero">
+      <Reveal as="section" className="menu-hero" direction="up" delay={0.05}>
         <div className="menu-hero-content">
           <p className="menu-label">OUR MENU</p>
 
@@ -446,17 +443,16 @@ const Menu = () => {
             discover something delicious for every moment.
           </p>
         </div>
-      </section>
+      </Reveal>
 
       <section className="menu-container">
         <div className="category-wrapper">
-          {menuCategories.map((category) => (
+          {categoryOptions.map((category) => (
             <button
               key={category}
+              type="button"
               className={
-                activeCategory === category
-                  ? "category-btn active"
-                  : "category-btn"
+                activeCategory === category ? "category-btn active" : "category-btn"
               }
               onClick={() => setActiveCategory(category)}
             >
@@ -465,21 +461,19 @@ const Menu = () => {
           ))}
         </div>
 
-        <div className="menu-header">
+        <div className="menu-header single-category-header">
           <div>
             <p>OUR SELECTION</p>
 
-            <h2>
-              {activeCategory === "All" ? "Everything You Love" : activeCategory}
-            </h2>
+            <h2>{activeCategory}</h2>
           </div>
 
           <span>{filteredItems.length} items</span>
         </div>
 
         <div className="menu-grid">
-          {filteredItems.map((item) => (
-            <article className="menu-card" key={item.id}>
+          {filteredItems.map((item, index) => (
+            <Reveal as="article" className="menu-card" key={item.id} direction="up" delay={index * 0.05}>
               <div className="menu-image-wrapper">
                 <img src={item.image} alt={item.name} />
 
@@ -497,12 +491,12 @@ const Menu = () => {
 
                 <span className="menu-category">{item.category}</span>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="menu-experience">
+      <Reveal as="section" className="menu-experience" direction="left" delay={0.08}>
         <div className="menu-experience-image">
           <img
             src="https://images.unsplash.com/photo-1445116572660-236099ec97a0"
@@ -526,34 +520,34 @@ const Menu = () => {
           </p>
 
           <div className="pairing-list">
-            <div>
+            <Reveal as="div" direction="up" delay={0.08}>
               <span>☕</span>
               <div>
                 <strong>Latte + Croissant</strong>
                 <p>A perfect morning combination.</p>
               </div>
-            </div>
+            </Reveal>
 
-            <div>
+            <Reveal as="div" direction="up" delay={0.14}>
               <span>🍫</span>
               <div>
                 <strong>Cold Brew + Brownie</strong>
                 <p>Bold coffee meets rich chocolate.</p>
               </div>
-            </div>
+            </Reveal>
 
-            <div>
+            <Reveal as="div" direction="up" delay={0.2}>
               <span>🍰</span>
               <div>
                 <strong>Cappuccino + Cheesecake</strong>
                 <p>A luxurious afternoon treat.</p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="menu-cta">
+      <Reveal as="section" className="menu-cta" direction="up" delay={0.1}>
         <p>MADE FRESH. SERVED WITH LOVE.</p>
 
         <h2>
@@ -571,7 +565,7 @@ const Menu = () => {
         >
           Visit Our Café 📍
         </a>
-      </section>
+      </Reveal>
     </main>
   );
 };

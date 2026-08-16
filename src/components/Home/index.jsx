@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Reveal from '../Reveal'
 import './index.css'
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
     <main className="home">
 
       {/* ================= HERO ================= */}
-      <section className="hero">
+      <Reveal as="section" className="hero" direction="up" delay={0.05}>
         <div className="hero-content">
           <p className="hero-tag">CRAFTED WITH PASSION</p>
 
@@ -45,39 +46,39 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
 
       {/* ================= FEATURES ================= */}
       <section className="features">
-        <div className="feature">
+        <Reveal as="div" className="feature" direction="up" delay={0.08}>
           <span>☕</span>
           <div>
             <h3>Premium Beans</h3>
             <p>Carefully selected from the world's finest origins.</p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="feature">
+        <Reveal as="div" className="feature" direction="up" delay={0.14}>
           <span>🔥</span>
           <div>
             <h3>Small Batch Roasted</h3>
             <p>Roasted with precision for exceptional flavour.</p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="feature">
+        <Reveal as="div" className="feature" direction="up" delay={0.2}>
           <span>🌱</span>
           <div>
             <h3>Ethically Sourced</h3>
             <p>Supporting farmers and sustainable coffee practices.</p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
 
       {/* ================= SIGNATURE COFFEE ================= */}
-      <section className="signature">
+      <Reveal as="section" className="signature" direction="up" delay={0.1}>
         <div className="section-heading">
           <p>OUR SIGNATURE</p>
           <h2>Made for Coffee Lovers</h2>
@@ -89,7 +90,7 @@ const Home = () => {
 
         <div className="coffee-grid">
 
-          <div className="coffee-card">
+          <Reveal as="div" className="coffee-card" direction="up" delay={0.06}>
             <img
               src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd"
               alt="Espresso"
@@ -103,10 +104,10 @@ const Home = () => {
 
               <strong>₹180</strong>
             </div>
-          </div>
+          </Reveal>
 
 
-          <div className="coffee-card">
+          <Reveal as="div" className="coffee-card" direction="up" delay={0.12}>
             <img
               src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7"
               alt="Cappuccino"
@@ -120,10 +121,10 @@ const Home = () => {
 
               <strong>₹220</strong>
             </div>
-          </div>
+          </Reveal>
 
 
-          <div className="coffee-card">
+          <Reveal as="div" className="coffee-card" direction="up" delay={0.18}>
             <img
               src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735"
               alt="Cold Brew"
@@ -137,18 +138,18 @@ const Home = () => {
 
               <strong>₹240</strong>
             </div>
-          </div>
+          </Reveal>
 
         </div>
 
         <Link to="/menu" className="menu-btn">
           View Full Menu →
         </Link>
-      </section>
+      </Reveal>
 
 
       {/* ================= EXPERIENCE ================= */}
-      <section className="experience">
+      <Reveal as="section" className="experience" direction="left" delay={0.08}>
 
         <div className="experience-image">
           <img
@@ -173,20 +174,20 @@ const Home = () => {
           </p>
 
           <div className="experience-list">
-            <div>
+            <Reveal as="div" direction="up" delay={0.08}>
               <strong>01</strong>
               <span>Specialty Coffee</span>
-            </div>
+            </Reveal>
 
-            <div>
+            <Reveal as="div" direction="up" delay={0.14}>
               <strong>02</strong>
               <span>Artisan Desserts</span>
-            </div>
+            </Reveal>
 
-            <div>
+            <Reveal as="div" direction="up" delay={0.2}>
               <strong>03</strong>
               <span>Warm Ambience</span>
-            </div>
+            </Reveal>
           </div>
 
           <Link to="/contact" className="primary-btn">
@@ -194,11 +195,11 @@ const Home = () => {
           </Link>
         </div>
 
-      </section>
+      </Reveal>
 
 
       {/* ================= QUOTE ================= */}
-      <section className="quote">
+      <Reveal as="section" className="quote" direction="up" delay={0.08}>
         <div>
           <span>“</span>
 
@@ -214,11 +215,11 @@ const Home = () => {
             Take a moment. Take a sip. Stay a little longer.
           </p>
         </div>
-      </section>
+      </Reveal>
 
 
       {/* ================= CTA ================= */}
-      <section className="home-cta">
+      <Reveal as="section" className="home-cta" direction="up" delay={0.12}>
 
         <p>YOUR NEXT FAVOURITE CUP</p>
 
@@ -236,7 +237,7 @@ const Home = () => {
           Visit Our Café →
         </button>
 
-      </section>
+      </Reveal>
 
     </main>
   );

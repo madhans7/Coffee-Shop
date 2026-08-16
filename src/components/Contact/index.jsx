@@ -1,10 +1,11 @@
 import React from "react";
+import Reveal from "../Reveal";
 import "./index.css";
 
 const Contact = () => {
   return (
     <main className="contact-page" id="contact">
-      <section className="contact-hero">
+      <Reveal as="section" className="contact-hero" direction="up" delay={0.06}>
         <div>
           <p>COME SAY HELLO</p>
 
@@ -19,10 +20,10 @@ const Contact = () => {
             friends, or a peaceful afternoon, we'd love to have you.
           </p>
         </div>
-      </section>
+      </Reveal>
 
       <section className="contact-section">
-        <div className="contact-info">
+        <Reveal as="div" className="contact-info" direction="left" delay={0.08}>
           <p className="contact-label">GET IN TOUCH</p>
 
           <h2>
@@ -37,7 +38,7 @@ const Contact = () => {
           </p>
 
           <div className="contact-details">
-            <div className="contact-detail">
+            <Reveal as="div" className="contact-detail" direction="up" delay={0.08}>
               <div className="contact-icon">📍</div>
 
               <div>
@@ -50,27 +51,27 @@ const Contact = () => {
                   Erode, Tamil Nadu
                 </p>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="contact-detail">
+            <Reveal as="div" className="contact-detail" direction="up" delay={0.12}>
               <div className="contact-icon">📞</div>
 
               <div>
                 <h3>Call Us</h3>
                 <p>+91 98765 4xxxx</p>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="contact-detail">
+            <Reveal as="div" className="contact-detail" direction="up" delay={0.16}>
               <div className="contact-icon">✉️</div>
 
               <div>
                 <h3>Email Us</h3>
                 <p>hello@coffeeshop.com</p>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="contact-detail">
+            <Reveal as="div" className="contact-detail" direction="up" delay={0.2}>
               <div className="contact-icon">🕐</div>
 
               <div>
@@ -81,11 +82,11 @@ const Contact = () => {
                   7:00 AM – 10:00 PM
                 </p>
               </div>
-            </div>
+            </Reveal>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="contact-form-wrapper">
+        <Reveal as="div" className="contact-form-wrapper" direction="right" delay={0.1}>
           <div className="contact-form">
             <p className="form-label">SEND US A MESSAGE</p>
 
@@ -140,10 +141,10 @@ const Contact = () => {
               </button>
             </form>
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="location-section">
+      <Reveal as="section" className="location-section" direction="up" delay={0.08}>
         <div className="location-content">
           <p>FIND YOUR WAY TO US</p>
 
@@ -175,9 +176,9 @@ const Contact = () => {
             loading="lazy"
           ></iframe>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="contact-cta">
+      <Reveal as="section" className="contact-cta" direction="up" delay={0.1}>
         <p>SEE YOU SOON</p>
 
         <h2>
@@ -185,7 +186,7 @@ const Contact = () => {
           <br />
           <span>Stay for the experience.</span>
         </h2>
-      </section>
+      </Reveal>
     </main>
   );
 };
