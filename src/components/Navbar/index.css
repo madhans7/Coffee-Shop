@@ -118,6 +118,10 @@
 }
 
 .order-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background: linear-gradient(180deg, #d3a966 0%, #b98343 100%);
   color: #2f1d14;
   padding: 8px 16px;
