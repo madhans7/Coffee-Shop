@@ -26,7 +26,7 @@ const Navbar = () => {
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen((prev) => !prev)}
       >
-        ☰
+        {menuOpen ? '✕' : '☰'}
       </button>
 
       <nav className={`nav-bar ${menuOpen ? 'open' : ''}`} aria-label="Main navigation">
